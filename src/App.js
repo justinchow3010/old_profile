@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import './sass/App.scss';
+import ContainerBox from './components/ContainerBox';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      {toolBar()}
+      <ContainerBox/>
+    </>
   );
 }
 
+const toolBar = () => (
+  <header className="toolbar">
+    <div className="title">
+      Justin Chow
+    </div>
+    <div className="toolbar-info">
+      <div className="toolbar-item">
+        Project
+      </div>
+      <div className="toolbar-item">
+        Contact
+      </div>
+    </div>
+  </header>
+)
 export default App;
