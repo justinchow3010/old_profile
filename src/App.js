@@ -29,28 +29,28 @@ function App() {
     }
 
     setLastY(currentY <= 0 ? 0 : currentY);
-    if (currentY <= homeRef.current.getBoundingClientRect().bottom && currentY >= homeRef.current.getBoundingClientRect().bottom - 30 && scrollUp === false) {
-      window.scrollBy({
-        top: projectRef.current.getBoundingClientRect().top - 100,
-        behavior: "smooth"
-      });
-    } else if (currentY <= projectRef.current.getBoundingClientRect().bottom && currentY >= projectRef.current.getBoundingClientRect().bottom - 30 && scrollUp === false) {
-      window.scrollBy({
-        top: contactRef.current.getBoundingClientRect().top - 100,
-        behavior: "smooth"
-      });
-      // } else if (currentY <= projectRef.current.getBoundingClientRect().bottom + 30 && currentY >= projectRef.current.getBoundingClientRect().bottom && scrollUp === true) {
-      //   console.log('asc')
-      //   window.scrollBy({
-      //     top: projectRef.current.getBoundingClientRect().top - 100,
-      //     behavior: "smooth"
-      //   });
-      // } else if (currentY <= homeRef.current.getBoundingClientRect().bottom + 30 && currentY >= homeRef.current.getBoundingClientRect().bottom && scrollUp === true) {
-      //   window.scrollBy({
-      //     top: homeRef.current.getBoundingClientRect().top - 100,
-      //     behavior: "smooth"
-      //   });
-    }
+    // if (currentY <= homeRef.current.getBoundingClientRect().bottom && currentY >= homeRef.current.getBoundingClientRect().bottom - 30 && scrollUp === false) {
+    //   window.scrollBy({
+    //     top: projectRef.current.getBoundingClientRect().top - 100,
+    //     behavior: "smooth"
+    //   });
+    // } else if (currentY <= projectRef.current.getBoundingClientRect().bottom && currentY >= projectRef.current.getBoundingClientRect().bottom - 30 && scrollUp === false) {
+    //   window.scrollBy({
+    //     top: contactRef.current.getBoundingClientRect().top - 100,
+    //     behavior: "smooth"
+    //   });
+    //   // } else if (currentY <= projectRef.current.getBoundingClientRect().bottom + 30 && currentY >= projectRef.current.getBoundingClientRect().bottom && scrollUp === true) {
+    //   //   console.log('asc')
+    //   //   window.scrollBy({
+    //   //     top: projectRef.current.getBoundingClientRect().top - 100,
+    //   //     behavior: "smooth"
+    //   //   });
+    //   // } else if (currentY <= homeRef.current.getBoundingClientRect().bottom + 30 && currentY >= homeRef.current.getBoundingClientRect().bottom && scrollUp === true) {
+    //   //   window.scrollBy({
+    //   //     top: homeRef.current.getBoundingClientRect().top - 100,
+    //   //     behavior: "smooth"
+    //   //   });
+    // }
   }, [currentY])
 
 
