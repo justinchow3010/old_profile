@@ -3,10 +3,10 @@ import ContainerBox from './components/ContainerBox';
 import { createRef, useEffect, useState } from 'react';
 
 function App() {
-  const personalDescription = `A final year student at CUHK, majoring in Information Engineering.\nPassionate about learning and changing things around.`;
-  const titleBoxes = [];
-  const backgroundImages = [];
-  const peopleImges = [];
+  const personalDescription = `A final year student at CUHK\nmajoring in Information Engineering\nminor in Computer Science\n\nPassionate about learning and changing things around.`;
+  // const titleBoxes = [];
+  // const backgroundImages = [];
+  // const peopleImges = [];
   const homeRef = createRef();
   const projectRef = createRef();
   const contactRef = createRef();
@@ -22,8 +22,6 @@ function App() {
   }, [])
 
   useEffect(() => {
-    // console.log(currentY)
-    // console.log(projectRef.current.getBoundingClientRect().bottom)
     if (lastY < currentY) {
       setScrollUp(false)
     } else {
@@ -31,7 +29,6 @@ function App() {
     }
 
     setLastY(currentY <= 0 ? 0 : currentY);
-    console.log(scrollUp)
     if (currentY <= homeRef.current.getBoundingClientRect().bottom && currentY >= homeRef.current.getBoundingClientRect().bottom - 30 && scrollUp === false) {
       window.scrollBy({
         top: projectRef.current.getBoundingClientRect().top - 100,
@@ -88,8 +85,8 @@ function App() {
       <div className="main-container">
         {toolBar()}
         <ContainerBox title="JUSTIN CHOW" description={personalDescription} titleBox="Home" background="bg1.svg" peopleImg="man with map.svg" ref={homeRef} />
-        <ContainerBox title="Repositories" description="Check out my repositories here!" titleBox="Project" background="bg10.svg" peopleImg="man with paper.svg" button={true} ref={projectRef} />
-        <ContainerBox title="Contact me" description={`Looking for new challenges${"\n"}Email: justinchow3010@gmail.com`} titleBox="Contact" background="bg19.svg" peopleImg="woman talking.svg" ref={contactRef} />
+        <ContainerBox title="Repositories" description={`I love to create interesting stuff.${"\n"}${"\n"}Check out my repositories here!`} titleBox="Project" background="bg10.svg" peopleImg="man with paper.svg" button={true} ref={projectRef} />
+        <ContainerBox title="Looking for opportunites" description={`${"\n"}Email: justinchow3010@gmail.com${"\n"} `} titleBox="Contact" background="bg19.svg" peopleImg="woman talking.svg" ref={contactRef} />
       </div>
       {bottomBar()}
     </div>
