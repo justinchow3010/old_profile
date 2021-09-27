@@ -35,13 +35,13 @@ const ContainerBox = forwardRef(({ title = "JUSTIN CHOW", description = "Not ava
             </div>
             <div className="image-box">
                 {background === "bg10.svg"
-                    ? <img src={require(`../assets/${background}`).default} alt="background" className="background" style={{ top: "-120px" }} />
+                    ? <img src={require(`../assets/${background}`).default} alt="background" className="background" style={{ top: "20%", left: "10%" }} />
                     : background === "bg19.svg"
-                        ? <img src={require(`../assets/${background}`).default} alt="background" className="background" style={{ bottom: "90px", height: "600px" }} />
+                        ? <img src={require(`../assets/${background}`).default} alt="background" className="background" style={{ bottom: "10%", height: "80%", left: "20%" }} />
                         : <img src={require(`../assets/${background}`).default} alt="background" className="background" />
                 }
                 {peopleImg === "woman talking.svg"
-                    ? <img src={require(`../assets/${peopleImg}`).default} alt="woman" className="people" style={{ left: "630px" }} />
+                    ? <img src={require(`../assets/${peopleImg}`).default} alt="woman" className="people" style={{ left: "80%" }} />
                     : <img src={require(`../assets/${peopleImg}`).default} alt="man" className="people" />
                 }
                 <div className="title-box">

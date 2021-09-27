@@ -24,6 +24,8 @@ a {
   top: 0px;
   background-color: white;
   z-index: 100;
+  width: 100%;
+  box-sizing: border-box;
   .title {
     cursor: pointer;
     display: inline-flex;
@@ -41,31 +43,31 @@ a {
 
 .container-box {
   display: flex;
-  margin: 40px 130px 0px 220px;
+  margin: 3% 6% 0px 10%;
   justify-content: space-between;
   align-items: flex-end;
   .background-box {
     border-radius: 55px;
     background: transparent linear-gradient(216deg, #ff5af9 0%, #63b6ff 59%, #4bffff 100%) 0% 0% no-repeat padding-box;
-    width: 610px;
-    height: 800px;
+    width: 40vw;
+    height: 100vh;
     position: relative;
     .trans-box {
       background: transparent linear-gradient(91deg, #ffffff3d 0%, #ffffff29 100%) 0% 0% no-repeat padding-box;
       box-shadow: -19px 20px 14px rgb(0, 0, 0, 0.16);
       border-radius: 57px;
       position: absolute;
-      width: 650px;
-      height: 617px;
-      top: 50px;
-      left: 75px;
-      padding: 45px;
+      width: 42vw;
+      height: 75vh;
+      top: 6%;
+      left: 16%;
+      padding: 8%;
       white-space: pre-wrap;
       .name {
         font-size: $title-size;
       }
       .description {
-        margin-top: 25px;
+        margin-top: 4%;
         font-size: 30px;
       }
       .button {
@@ -91,19 +93,21 @@ a {
   }
   .image-box {
     width: 900px;
-    height: 500px;
+    height: 100vh;
     position: relative;
     z-index: -1;
+    margin-left: 3%;
     .background {
-      width: 900px;
-      height: 500px;
+      max-width: 90%;
+      height: auto;
       position: absolute;
+      bottom: 0;
     }
     .people {
-      height: 600px;
+      height: 70%;
       position: absolute;
-      left: 220px;
-      top: -95px;
+      left: 35%;
+      bottom: 0;
     }
     .title-box {
       background-color: white;
