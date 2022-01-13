@@ -6,6 +6,7 @@ const Loader = () => {
     const [isVisible, setIsVisibile] = useState(false);
     const [isLoaded, setIsLoaded] = useState(false);
     const [toBeDeleted, setToBeDeleted] = useState(false);
+    const loadingSpeed = 700;
 
     useEffect(() => {
         const timeOut = setTimeout(() => setProgressNum(100), 5000);
@@ -13,7 +14,7 @@ const Loader = () => {
     }, []);
 
     useEffect(() => {
-        const timeOut = setTimeout(() => setProgressNum(prev => prev + Math.floor(Math.random() * (30 - 40) + 40)), 1000);
+        const timeOut = setTimeout(() => setProgressNum(prev => prev + Math.floor(Math.random() * (30 - 40) + 40)), loadingSpeed);
         if (progressNum > 50) {
             console.log(progressNum)
             setIsVisibile(true);
@@ -24,15 +25,16 @@ const Loader = () => {
     
     useEffect(() => {
         if (progressNum > 100) {
-            const timeOut = setTimeout(() => setIsLoaded(true), 1000);
-            const timeOut2 = setTimeout(() => setToBeDeleted(true), 2000);
-        }
+            const timeOut = setTimeout(() => setIsLoaded(true), loadingSpeed);
+            const timeOut2 = setTimeout(() => setToBeDeleted(true), 900);
+            return () => {clearTimeout(timeOut); clearTimeout(timeOut2);};
+    }
     }, [progressNum]);
 
     return (
         <div className={!isLoaded? "loading-page shown" : "loading-page notshown"} style={{ display: toBeDeleted ? "none" : "flex"}}>
             <h1 className="title">JC</h1>
-            <ProgressBar completed={progressNum} customLabel="Justin Chow" transitionDuration="1s" labelAlignment="center" labelClassName={isVisible ? "label-shown" : "label-notshown"} width="700px"/>
+            <ProgressBar completed={progressNum} customLabel="Welcome" transitionDuration="0.7s" labelAlignment="center" labelClassName={isVisible ? "label-shown" : "label-notshown"} width="40vw" height="10px" bgColor="#201f3081"/>
         </div>
     );
 }

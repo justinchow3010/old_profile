@@ -7,6 +7,26 @@
 $darkblue: #272f48;
 $title-size: 86px;
 
+// ScrollBar
+html {
+  scrollbar-width: thin;
+  scrollbar-color: $darkblue $darkblue;
+}
+body::-webkit-scrollbar {
+  width: 13px;
+}
+body::-webkit-scrollbar-track {
+  background: white;
+}
+body::-webkit-scrollbar-thumb {
+  background-color: #8892b0;
+  border: 3px solid white;
+  border-radius: 10px;
+  &:hover {
+    background-color: #495670;
+  }
+}
+
 a {
   text-decoration: none;
   color: $darkblue;
@@ -53,7 +73,7 @@ a {
     height: 100vh;
     position: relative;
     .trans-box {
-      background: transparent linear-gradient(91deg, #ffffff3d 0%, #ffffff29 100%) 0% 0% no-repeat padding-box;
+      background: transparent linear-gradient(91deg, #ffffff00 0%, #ffffff29 100%) 0% 0% no-repeat padding-box;
       box-shadow: -19px 20px 14px rgb(0, 0, 0, 0.16);
       border-radius: 57px;
       position: absolute;
@@ -133,6 +153,7 @@ a {
 }
 
 .loading-page {
+  overflow: hidden;
   width: 100%;
   height: 100%;
   position: fixed;
@@ -140,18 +161,17 @@ a {
   z-index: 20;
   align-items: center;
   justify-content: center;
-  display: flex;
   flex-direction: column;
+
   .title {
     font-size: 100px;
     font-weight: 400;
   }
   .label-shown {
     color: white;
-    font-size: 15px;
+    font-size: 10px;
     animation: fadeIn 0.5s;
   }
-
   .label-notshown {
     opacity: 0;
   }

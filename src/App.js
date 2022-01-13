@@ -1,6 +1,5 @@
 import './sass/App.scss';
 import ContainerBox from './components/ContainerBox';
-import Loader from './components/loader';
 import { createRef, useEffect, useState } from 'react';
 
 function App() {
